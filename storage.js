@@ -12,36 +12,26 @@ HomeInventoryDatabase.electronics = []
   }
 
 //function to add to the database
-// const itemAdder = (database, category, name, location, description,) => {
-//     const newItem = new ItemCreator (name, location, description );
-//     [database][category].push(newItem);
-// }
+const itemAdder = (database, category, name, location, description) => {
+    const newItem = new ItemCreator (name, location, description );
+    database[category].push(newItem);
+}
 
 //electronics items
-const iMac = new ItemCreator('iMac', 'bedroom', 'shiny new iMac' );
-const nest = new ItemCreator('nest', 'entryway', 'thermostat');
-const babyMonitor = new ItemCreator('baby monitor', 'baby room', 'old iPhone');
-HomeInventoryDatabase.electronics.push(iMac)
-HomeInventoryDatabase.electronics.push(nest)
-HomeInventoryDatabase.electronics.push(babyMonitor)
+itemAdder(HomeInventoryDatabase, 'electronics', 'iMac', 'bedroom', 'shiny new iMac' );
+itemAdder(HomeInventoryDatabase, 'electronics', 'nest', 'entryway', 'thermostat');
+itemAdder(HomeInventoryDatabase, 'electronics', 'baby monitor', 'baby room', 'old iPhone');
 
 //craft items
-const babyFeet = new ItemCreator("Levi's footprints", 'baby room', 'footprint painting');
-const paperCut = new ItemCreator('paper cut project', 'living room', 'paper cut artwork');
-const quilt = new ItemCreator('wedding quilt', 'bedroom', 'multi-colored quilt');
-HomeInventoryDatabase.crafts.push(babyFeet)
-HomeInventoryDatabase.crafts.push(paperCut)
-HomeInventoryDatabase.crafts.push(quilt)
+itemAdder(HomeInventoryDatabase, 'crafts', "Levi's footprints", 'baby room', 'footprint painting');
+itemAdder(HomeInventoryDatabase, 'crafts', 'paper cut project', 'living room', 'paper cut artwork');
+itemAdder(HomeInventoryDatabase, 'crafts', 'wedding quilt', 'bedroom', 'multi-colored quilt');
 
 // furniture items
-const couch = new ItemCreator('vintage sofa', 'living room', 'light-blue vintage sofa');
-const table = new ItemCreator('1940s dining set', 'dining room', 'cherry wood with gloss finish');
-const chair = new ItemCreator('captains chair', 'living room', 'nut brown leather chair');
-const coffeeTable = new ItemCreator('coffee table', 'living room', 'cherry coffee table with glass top');
-HomeInventoryDatabase.furniture.push(couch)
-HomeInventoryDatabase.furniture.push(table)
-HomeInventoryDatabase.furniture.push(chair)
-HomeInventoryDatabase.furniture.push(coffeeTable)
+itemAdder(HomeInventoryDatabase, 'furniture', 'LOVESEAT', 'living room', 'light-blue vintage sofa');
+itemAdder(HomeInventoryDatabase, 'furniture', '1940s dining set', 'dining room', 'cherry wood with gloss finish');
+itemAdder(HomeInventoryDatabase, 'furniture', 'captains chair', 'living room', 'nut brown leather chair');
+itemAdder(HomeInventoryDatabase, 'furniture', 'coffee table', 'living room', 'cherry coffee table with glass top');
 
 
 const saveDatabase = function (databaseObject, localStorageKey) {
