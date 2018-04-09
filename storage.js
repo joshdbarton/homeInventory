@@ -4,18 +4,12 @@ HomeInventoryDatabase.furniture = []
 HomeInventoryDatabase.crafts = []
 HomeInventoryDatabase.electronics = []
 
-//constructor function to make items
-  function ItemCreator (name, location, description) {
-      this.name = name;
-      this.location = location;
-      this.description = description;
-  }
-
-//function to add to the database
+//function that creates a new item and pushes it to the database
 const itemAdder = (database, category, name, location, description) => {
-    const newItem = new ItemCreator (name, location, description );
+    const newItem = {'name': name, 'location': location, 'description': description};
     database[category].push(newItem);
-}
+ }
+
 
 //electronics items
 itemAdder(HomeInventoryDatabase, 'electronics', 'iMac', 'bedroom', 'shiny new iMac' );
