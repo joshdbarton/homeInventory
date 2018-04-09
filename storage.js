@@ -27,26 +27,14 @@ itemAdder(HomeInventoryDatabase, 'furniture', '1940s dining set', 'dining room',
 itemAdder(HomeInventoryDatabase, 'furniture', 'captains chair', 'living room', 'nut brown leather chair');
 itemAdder(HomeInventoryDatabase, 'furniture', 'coffee table', 'living room', 'cherry coffee table with glass top');
 
-
+//function that saves database to local storage
 const saveDatabase = function (databaseObject, localStorageKey) {
-    /*
-        Convert the Object into a string.
-    */
-    const stringifiedDatabase = JSON.stringify(databaseObject)
-
-    /*
-        Create a key in local storage, and store the string
-        version of your inventory database as the value
-    */
-    localStorage.setItem(localStorageKey, stringifiedDatabase)
+    localStorage.setItem(localStorageKey, JSON.stringify(databaseObject))
 }
 
-const loadDatabase = function (localStorageKey) {
-    // Get the string version of the database
-    const databaseString = localStorage.getItem(localStorageKey)
-
-    // Use JSON.parse() to convert the string back into an object
-    return JSON.parse(databaseString)
+//function that loads database from the string on local storage
+const loadDatabase = function (localStorageKey) { 
+    return JSON.parse(localStorage.getItem(localStorageKey))
 }
 
 // Persist the database to localStorage
